@@ -224,7 +224,7 @@ class Plugin(object):
         name = self.canvas.filename
         # suffix check
         supported = tuple(Plugin.JSON['COMMAND']['SUFFIX'])
-        if not name.endswith(supported):
+        if not name.lower().endswith(supported):
             raise Exception('UnSupported File Type\n{0}'.format(name))
         if self.canvas.dirty:
             raise Exception('Please save the image\n{0}'.format(name))
